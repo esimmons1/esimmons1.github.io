@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ellis Simmons | Portfolio</title>
+  <style>
+    :root {
+      --bgColor: #ffffff;
+      --textColor: #000000;
+      --headerBg: #222;
+      --linkColor: #ffffff;
+    }
+
+    body.dark {
+      --bgColor: #121212;
+      --textColor: #ffffff;
+      --headerBg: #1f1f1f;
+      --linkColor: #00bfff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      background-color: var(--bgColor);
+      color: var(--textColor);
+    }
+
+    header {
+      background-color: var(--headerBg);
+      color: var(--linkColor);
+      padding: 1em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 2em;
+    }
+
+    nav a {
+      color: var(--linkColor);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .toggleBtn {
+      background: none;
+      border: 2px solid var(--linkColor);
+      color: var(--linkColor);
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 4em 2em;
+    }
+
+    .aboutSection {
+      text-align: center;
+    }
+
+    .programmingSection {
+      background: #e6f0ff;
+    }
+
+    body.dark .programmingSection {
+      background: #1a2a40;
+    }
+
+    .programmingSection ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .programmingSection li {
+      margin-bottom: 0.5em;
+    }
+
+    .photographySection {
+      background: #f0f0f0;
+    }
+
+    body.dark .photographySection {
+      background: #1f1f1f;
+    }
+
+    .photoGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .photoGrid img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--headerBg);
+      color: var(--linkColor);
+      padding: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#programming">Programming</a>
+      <a href="#photography">Photography</a>
+    </nav>
+    <button class="toggleBtn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </header>
+
+  <section id="about" class="aboutSection">
+    <h1>Hi, I'm Ellis Simmons</h1>
+    <p>Welcome to my personal website. I'm passionate about programming, photography, and creative projects. This is my little hub to share what I create.</p>
+  </section>
+
+  <section id="programming" class="programmingSection">
+    <h2>Programming Projects</h2>
+    <ul>
+      <li><a href="#">Project 1 – MIPS Guessing Game</a></li>
+      <li><a href="#">Project 2 – React Todo List</a></li>
+      <li><a href="#">Project 3 – C++ Pathfinding Algorithm</a></li>
+    </ul>
+  </section>
+
+  <section id="photography" class="photographySection">
+    <h2>Photography</h2>
+    <div class="photoGrid">
+      <img src="https://via.placeholder.com/300x200" alt="Photo 1" />
+      <img src="https://via.placeholder.com/300x200" alt="Photo 2" />
+      <img src="https://via.placeholder.com/300x200" alt="Photo 3" />
+      <img src="https://via.placeholder.com/300x200" alt="Photo 4" />
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ellis Simmons</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
