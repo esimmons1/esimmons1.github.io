@@ -1,61 +1,59 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photography - Ellis Simmons</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="programming.html">Programming</a>
-      <a href="photography.html">Photography</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography - Ellis Simmons</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="programming.html">Programming</a>
+        <a href="photography.html">Photography</a>
+      </nav>
+    </header>
 
-  <main>
-    <section id="photography">
-      <h2>Photography</h2>
-      <div class="photoGrid">
-        <img src="https://i.imgur.com/X18FAS6.jpeg" alt="Photo 24" />
-        <img src="https://i.imgur.com/JleoDjm.jpeg" alt="Photo 15" />
-      </div>
-    </section>
-  </main>
+    <main>
+      <section id="photography">
+        <h2>Photography</h2>
+        <div class="photo-grid">
+          <img src="https://i.imgur.com/X18FAS6.jpeg" alt="Photo 24" />
+          <img src="https://i.imgur.com/JleoDjm.jpeg" alt="Photo 15" />
+        </div>
+      </section>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 Ellis Simmons</p>
-  </footer>
+    <footer>
+      <p>&copy; 2025 Ellis Simmons</p>
+    </footer>
 
-  <!-- Lightbox HTML -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" />
-  </div>
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+    </div>
 
-  <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.close');
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.querySelector(".close");
 
-    document.querySelectorAll('.photoGrid img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'block';
-        lightboxImg.src = img.src;
+      document.querySelectorAll(".photo-grid img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "block";
+          lightboxImg.src = img.src;
+        });
       });
-    });
 
-    closeBtn.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
+      closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
 
-    lightbox.addEventListener('click', (e) => {
-      if (e.target !== lightboxImg) {
-        lightbox.style.display = 'none';
-      }
-    });
-  </script>
-</body>
+      lightbox.addEventListener("click", (e) => {
+        if (e.target !== lightboxImg) {
+          lightbox.style.display = "none";
+        }
+      });
+    </script>
+  </body>
 </html>
