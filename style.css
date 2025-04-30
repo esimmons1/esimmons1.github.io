@@ -44,46 +44,15 @@ nav a {
   font-weight: bold;
 }
 
-.toggleBtn {
-  background: none;
-  border: 2px solid var(--linkColor);
-  color: var(--linkColor);
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 section {
   padding: 4em 2em;
 }
 
-.aboutSection {
+footer {
   text-align: center;
-}
-
-.programmingSection {
-  background: #e6f0ff;
-}
-
-body.dark .programmingSection {
-  background: #1a2a40;
-}
-
-.programmingSection ul {
-  list-style: none;
-  padding: 0;
-}
-
-.programmingSection li {
-  margin-bottom: 0.5em;
-}
-
-.photographySection {
-  background: #f0f0f0;
-}
-
-body.dark .photographySection {
-  background: #1f1f1f;
+  background: var(--headerBg);
+  color: var(--linkColor);
+  padding: 2em;
 }
 
 .photoGrid {
@@ -107,13 +76,6 @@ body.dark .photographySection {
   transform: scale(1.05);
 }
 
-footer {
-  text-align: center;
-  background: var(--headerBg);
-  color: var(--linkColor);
-  padding: 2em;
-}
-
 /* Lightbox Styles */
 .lightbox {
   display: none;
@@ -125,7 +87,7 @@ footer {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
 }
 
