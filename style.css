@@ -1,36 +1,72 @@
-/* Global Styles */
+/* === Root Variables === */
 :root {
-  --bgColor: #ffffff;
-  --textColor: #000000;
-  --headerBg: #222;
-  --linkColor: #ffffff;
+  --primary-color: #1a73e8;
+  --secondary-color: #f1f3f4;
+  --text-color: #202124;
+  --link-color: #1a73e8;
+  --header-bg: #ffffff;
+  --footer-bg: #f1f3f4;
+  --font-family: 'Inter', sans-serif;
+  --font-size-base: 16px;
+  --spacing: 1rem;
+  --border-radius: 8px;
 }
 
-body.dark {
-  --bgColor: #121212;
-  --textColor: #ffffff;
-  --headerBg: #1f1f1f;
-  --linkColor: #00bfff;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #8ab4f8;
+    --secondary-color: #202124;
+    --text-color: #e8eaed;
+    --link-color: #8ab4f8;
+    --header-bg: #1f1f1f;
+    --footer-bg: #1f1f1f;
+  }
+}
+
+/* === Global Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   scroll-behavior: smooth;
-  background-color: var(--bgColor);
-  color: var(--textColor);
+  line-height: 1.6;
 }
 
+/* === Typography === */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: var(--spacing);
+}
+
+/* === Header === */
 header {
-  background-color: var(--headerBg);
-  color: var(--linkColor);
-  padding: 1em;
+  background-color: var(--header-bg);
+  color: var(--link-color);
+  padding: 1em var(--spacing);
   position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 nav {
@@ -39,49 +75,54 @@ nav {
 }
 
 nav a {
-  color: var(--linkColor);
+  color: var(--link-color);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* === Section Layout === */
 section {
-  padding: 4em 2em;
+  padding: 4em var(--spacing);
 }
 
+/* === Footer === */
 footer {
   text-align: center;
-  background: var(--headerBg);
-  color: var(--linkColor);
+  background: var(--footer-bg);
+  color: var(--text-color);
   padding: 2em;
 }
 
-.photoGrid {
-  column-count: 6;
-  column-gap: 8px;
-  padding: 0 1em;
+/* === Photo Grid === */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--spacing);
+  padding: 0 var(--spacing);
 }
 
-.photoGrid img {
+.photo-grid img {
   width: 100%;
-  display: block;
-  margin: 8px;
-  padding: 3px;
-  border-radius: 8px;
-  break-inside: avoid;
+  height: auto;
+  border-radius: var(--border-radius);
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease;
 }
 
-.photoGrid img:hover {
+.photo-grid img:hover {
   transform: scale(1.05);
 }
 
-/* Lightbox Styles */
+/* === Lightbox === */
 .lightbox {
   display: none;
   position: fixed;
   z-index: 9999;
-  padding-top: 60px;
   left: 0;
   top: 0;
   width: 100%;
@@ -89,6 +130,7 @@ footer {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
+  padding-top: 60px;
 }
 
 .lightbox-content {
@@ -96,7 +138,7 @@ footer {
   display: block;
   max-width: 90%;
   max-height: 80%;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 .close {
@@ -107,8 +149,37 @@ footer {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  transition: color 0.3s;
 }
 
 .close:hover {
   color: #bbb;
+}
+
+/* === Buttons (if needed) === */
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0f5ec2;
+}
+
+/* === Animation === */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
