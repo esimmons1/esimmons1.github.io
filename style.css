@@ -1,26 +1,16 @@
 /* === Root Variables === */
 :root {
-  --primary-color: #1a73e8;
-  --secondary-color: #f1f3f4;
-  --text-color: #202124;
-  --link-color: #1a73e8;
-  --header-bg: #ffffff;
-  --footer-bg: #f1f3f4;
+  --primary-color: #ffbd33; /* yellow-orange */
+  --secondary-color: #4a4a4a; /* medium gray */
+  --background-color: #2a2a2a; /* dark gray */
+  --text-color: #ffffff;
+  --link-color: var(--primary-color);
+  --header-bg: #1f1f1f;
+  --footer-bg: #1f1f1f;
   --font-family: 'Inter', sans-serif;
   --font-size-base: 16px;
   --spacing: 1rem;
   --border-radius: 8px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #8ab4f8;
-    --secondary-color: #202124;
-    --text-color: #e8eaed;
-    --link-color: #8ab4f8;
-    --header-bg: #1f1f1f;
-    --footer-bg: #1f1f1f;
-  }
 }
 
 /* === Global Reset === */
@@ -33,7 +23,7 @@
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  background-color: var(--secondary-color);
+  background-color: var(--background-color);
   color: var(--text-color);
   scroll-behavior: smooth;
   line-height: 1.6;
@@ -58,7 +48,6 @@ p {
 /* === Header === */
 header {
   background-color: var(--header-bg);
-  color: var(--link-color);
   padding: 1em var(--spacing);
   position: sticky;
   top: 0;
@@ -66,7 +55,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 nav {
@@ -82,7 +71,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--primary-color);
+  color: #ffffff;
 }
 
 /* === Section Layout === */
@@ -111,11 +100,13 @@ footer {
   height: auto;
   border-radius: var(--border-radius);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--primary-color);
 }
 
 .photo-grid img:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 /* === Lightbox === */
@@ -128,7 +119,7 @@ footer {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.95);
   text-align: center;
   padding-top: 60px;
 }
@@ -139,13 +130,14 @@ footer {
   max-width: 90%;
   max-height: 80%;
   border-radius: var(--border-radius);
+  border: 4px solid var(--primary-color);
 }
 
 .close {
   position: absolute;
   top: 20px;
   right: 35px;
-  color: #fff;
+  color: var(--text-color);
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
@@ -153,13 +145,13 @@ footer {
 }
 
 .close:hover {
-  color: #bbb;
+  color: var(--primary-color);
 }
 
 /* === Buttons (if needed) === */
 .button {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--background-color);
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 4px;
@@ -169,7 +161,7 @@ footer {
 }
 
 .button:hover {
-  background-color: #0f5ec2;
+  background-color: #2a2a2a;
 }
 
 /* === Animation === */
