@@ -1,0 +1,152 @@
+/* Global Styles */
+:root {
+  --bgColor: #ffffff;
+  --textColor: #000000;
+  --headerBg: #222;
+  --linkColor: #ffffff;
+}
+
+body.dark {
+  --bgColor: #121212;
+  --textColor: #ffffff;
+  --headerBg: #1f1f1f;
+  --linkColor: #00bfff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--bgColor);
+  color: var(--textColor);
+}
+
+header {
+  background-color: var(--headerBg);
+  color: var(--linkColor);
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 2em;
+}
+
+nav a {
+  color: var(--linkColor);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toggleBtn {
+  background: none;
+  border: 2px solid var(--linkColor);
+  color: var(--linkColor);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section {
+  padding: 4em 2em;
+}
+
+.aboutSection {
+  text-align: center;
+}
+
+.programmingSection {
+  background: #e6f0ff;
+}
+
+body.dark .programmingSection {
+  background: #1a2a40;
+}
+
+.programmingSection ul {
+  list-style: none;
+  padding: 0;
+}
+
+.programmingSection li {
+  margin-bottom: 0.5em;
+}
+
+.photographySection {
+  background: #f0f0f0;
+}
+
+body.dark .photographySection {
+  background: #1f1f1f;
+}
+
+.photoGrid {
+  column-count: 6;
+  column-gap: 8px;
+  padding: 0 1em;
+}
+
+.photoGrid img {
+  width: 100%;
+  display: block;
+  margin: 8px;
+  padding: 3px;
+  border-radius: 8px;
+  break-inside: avoid;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.photoGrid img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  background: var(--headerBg);
+  color: var(--linkColor);
+  padding: 2em;
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  text-align: center;
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
+}
