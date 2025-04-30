@@ -1,106 +1,114 @@
-/* === COLOR + FONT VARIABLES === */
+/* Global Styles */
 :root {
-  --primary-color: #0a192f;       /* Dark navy background */
-  --secondary-color: #64ffda;     /* Teal accent color */
-  --text-color: #ccd6f6;          /* Light text for readability */
-  --bg-color: #0a192f;            /* Page background */
-  --accent-color: #112240;        /* Section/card background */
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --bgColor: #ffffff;
+  --textColor: #000000;
+  --headerBg: #222;
+  --linkColor: #ffffff;
 }
 
-/* === GLOBAL STYLES === */
+body.dark {
+  --bgColor: #121212;
+  --textColor: #ffffff;
+  --headerBg: #1f1f1f;
+  --linkColor: #00bfff;
+}
+
 body {
   margin: 0;
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--bgColor);
+  color: var(--textColor);
 }
 
-/* === HEADER/NAVIGATION === */
 header {
+  background-color: var(--headerBg);
+  color: var(--linkColor);
+  padding: 1em;
   position: sticky;
   top: 0;
-  background-color: var(--accent-color);  /* Slightly lighter than bg */
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  z-index: 1000;
 }
 
-/* Navigation Links */
+nav {
+  display: flex;
+  gap: 2em;
+}
+
 nav a {
-  color: var(--secondary-color);       /* Teal links */
-  margin-left: 1.5rem;
+  color: var(--linkColor);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: var(--text-color);            /* Change color on hover */
-}
-
-/* === PAGE SECTIONS === */
 section {
-  padding: 4rem 2rem;
+  padding: 4em 2em;
 }
 
-/* === HERO SECTION (INTRO) === */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
-}
-
-/* === PROJECTS SECTION === */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-/* Individual Project Card */
-.project-card {
-  background-color: var(--accent-color);
-  padding: 1.5rem;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);  /* Floating effect */
-}
-
-/* Project Text */
-.project-card h3 {
-  margin-top: 0;
-  color: var(--secondary-color);
-}
-
-.project-card p {
-  color: var(--text-color);
-}
-
-/* === FOOTER === */
 footer {
   text-align: center;
-  padding: 2rem;
-  background-color: var(--accent-color);
-  color: var(--text-color);
+  background: var(--headerBg);
+  color: var(--linkColor);
+  padding: 2em;
+}
+
+.photoGrid {
+  column-count: 6;
+  column-gap: 8px;
+  padding: 0 1em;
+}
+
+.photoGrid img {
+  width: 100%;
+  display: block;
+  margin: 8px;
+  padding: 3px;
+  border-radius: 8px;
+  break-inside: avoid;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.photoGrid img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
 }
