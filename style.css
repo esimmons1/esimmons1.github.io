@@ -90,6 +90,7 @@ footer {
 /* === Photo Grid === */
 .photo-grid {
   display: grid;
+  column-count: 6;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: var(--spacing);
   padding: 0 var(--spacing);
