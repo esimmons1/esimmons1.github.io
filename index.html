@@ -4,31 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ellis Simmons | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    header {
+      background-color: #222;
+      color: #ffffff;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav {
+      display: flex;
+      gap: 2em;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #222;
+      color: white;
+    }
+    main {
+      padding: 2em;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
-      <a href="#about">About</a>
+      <a href="index.html">Home</a>
       <a href="programming.html">Programming</a>
       <a href="photography.html">Photography</a>
     </nav>
-    <button class="toggleBtn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
   </header>
 
-  <section id="about" class="aboutSection">
-    <h1>Hi, I'm Ellis Simmons</h1>
-    <p>Hello, this is my website for sharing my photos and programs to hopefully get a job. Thank you for reading.</p>
-  </section>
+  <main>
+    <section id="about">
+      <h1>Hi, I'm Ellis Simmons</h1>
+      <p>Hello, this is my website for sharing my photos and programs to hopefully get a job. Thank you for visiting!</p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Ellis Simmons</p>
   </footer>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
 </body>
 </html>
