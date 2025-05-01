@@ -89,20 +89,20 @@ footer {
 
 /* === Photo Grid === */
 .photo-grid {
-  display: grid;
   column-count: 6;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: var(--spacing);
+  column-gap: var(--spacing);
   padding: 0 var(--spacing);
 }
 
 .photo-grid img {
   width: 100%;
-  height: auto;
+  display: block;
+  margin-bottom: var(--spacing);
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid var(--primary-color);
+  break-inside: avoid;
 }
 
 .photo-grid img:hover {
@@ -200,4 +200,22 @@ footer {
 .project-btn:hover {
   background-color: #e0b40a;
   transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  .photo-grid {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    column-count: 1;
+  }
 }
