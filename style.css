@@ -185,7 +185,7 @@ footer {
 }
 
 .project-btn {
-  background-color: #d3a203;
+  background-color: #70a4d0;
   color: #1a1a1a;
   text-decoration: none;
   padding: 1rem 1.5rem;
@@ -198,7 +198,7 @@ footer {
 }
 
 .project-btn:hover {
-  background-color: #70a4d0;
+  background-color: #5a84a8;
   transform: translateY(-2px);
 }
 
