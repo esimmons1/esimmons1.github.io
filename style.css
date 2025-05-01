@@ -1,6 +1,6 @@
 /* === Root Variables === */
 :root {
-  --primary-color: #ffbd33; /* yellow-orange */
+  --primary-color: #4682B4; /* steel blue */
   --secondary-color: #4a4a4a; /* medium gray */
   --background-color: #2a2a2a; /* dark gray */
   --text-color: #ffffff;
@@ -162,7 +162,7 @@ footer {
 }
 
 .button:hover {
-  background-color: #2a2a2a;
+  background-color: (--background-color);
 }
 
 /* === Animation === */
