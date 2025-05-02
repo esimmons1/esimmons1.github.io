@@ -6,7 +6,7 @@ let img;
 let imgReady = false;
 
 function preload() {
-  img = loadImage("https://i.imgur.com/O0yGXQU.png", () => {
+  img = loadImage("Photos - Imgur.png");, () => {
     console.log("Image loaded successfully");
     imgReady = true;
   }, () => {
