@@ -6,7 +6,6 @@ let img;
 let imgReady = false;
 
 function preload() {
-  // ✅ Try a different host if this one doesn't load
   img = loadImage("https://i.imgur.com/O0yGXQU.png", () => {
     console.log("Image loaded successfully");
     imgReady = true;
@@ -19,7 +18,7 @@ function setup() {
   let canvas = createCanvas(600, 600);
   canvas.parent("sketch-holder");
 
-  colorMode(HSB, 255); // ✅ Needed for brightness()
+  colorMode(HSB, 255); // Needed for brightness()
   noStroke();
 
   if (!imgReady) return;
