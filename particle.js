@@ -6,25 +6,34 @@ let img;
 let imgReady = false;
 
 function preload() {
-  // load the image directly from Imgur (PNG format works fine)
-  img = loadImage("https://i.imgur.com/O0yGXQU.png");
+  // ✅ Try a different host if this one doesn't load
+  img = loadImage("https://i.imgur.com/O0yGXQU.png", () => {
+    console.log("Image loaded successfully");
+    imgReady = true;
+  }, () => {
+    console.log("Image failed to load");
+  });
 }
 
 function setup() {
   let canvas = createCanvas(600, 600);
   canvas.parent("sketch-holder");
 
-  img.resize(cols, rows); // resize image to match grid
+  colorMode(HSB, 255); // ✅ Needed for brightness()
+  noStroke();
+
+  if (!imgReady) return;
+
+  img.resize(cols, rows);
   img.loadPixels();
-  imgReady = true;
 
   for (let i = 0; i < cols; i++) {
     particles[i] = [];
     for (let j = 0; j < rows; j++) {
       let x = width / 2 - cols * spacing / 2 + i * spacing;
       let y = height / 2 - rows * spacing / 2 + j * spacing;
-      let c = img.get(i, j); // get color at this pixel
-      let b = brightness(color(c)); // brightness 0–255
+      let c = img.get(i, j);
+      let b = brightness(color(c));
       particles[i][j] = new Particle(x, y, b);
     }
   }
@@ -67,7 +76,7 @@ class Particle {
     }
 
     let lift = map(this.brightnessValue, 0, 255, 0, -2);
-    this.applyForce(createVector(0, lift * 0.3)); // float up more if brighter
+    this.applyForce(createVector(0, lift * 0.3));
 
     let returnForce = p5.Vector.sub(this.origin, this.pos);
     returnForce.mult(0.08);
@@ -97,21 +106,4 @@ class Particle {
           if (d < this.bounceRadius && d > 0) {
             let repel = p5.Vector.sub(this.pos, other.pos);
             repel.normalize();
-            repel.mult((this.bounceRadius - d) * 0.02);
-            this.applyForce(repel);
-          }
-        }
-      }
-    }
-  }
-
-  applyForce(force) {
-    this.acc.add(force);
-  }
-
-  show() {
-    noStroke();
-    fill(255);
-    ellipse(this.pos.x, this.pos.y, 3, 3);
-  }
-}
+            rep
