@@ -11,6 +11,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
     <script src="particles.js"></script>
+    <style>
+      .horizontal-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+      .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 140px;
+        text-align: center;
+      }
+      .skill-bar {
+        width: 100%;
+        background-color: #ddd;
+        height: 8px;
+        border-radius: 4px;
+        margin-top: 5px;
+      }
+      .skill-level {
+        height: 8px;
+        border-radius: 4px;
+        background-color: #4caf50;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -35,8 +62,7 @@
           <h2>Programmer and Photographer</h2>
           <p class="tagline">Information Systems student in Pittsburgh</p>
           <div class="hero-buttons">
-            <a href="#projects" class="btn primary-btn">Work</a>
-            <a href="#about" class="btn secondary-btn">About</a>
+            <a href="#about" class="btn primary-btn">About</a>
           </div>
         </div>
         <div class="hero-animation" id="sketch-holder"></div>
@@ -72,180 +98,33 @@
           <h2>Skills</h2>
           <div class="section-divider"></div>
         </div>
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3>Programming</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <h4>JavaScript / TypeScript</h4>
-                <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-              </div>
-              <div class="skill-item">
-                <h4>Python</h4>
-                <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-              </div>
-              <div class="skill-item">
-                <h4>Java</h4>
-                <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
-              </div>
-              <div class="skill-item">
-                <h4>HTML / CSS</h4>
-                <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-              </div>
-            </div>
+        <div class="horizontal-skills">
+          <div class="skill-item">
+            <h4>JavaScript / TypeScript</h4>
+            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
           </div>
-          <div class="skill-category">
-            <h3>Other</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <h4>Photography</h4>
-                <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
-              </div>
-              <div class="skill-item">
-                <h4>3D Modeling</h4>
-                <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
-              </div>
-              <div class="skill-item">
-                <h4>Electronics</h4>
-                <div class="skill-bar"><div class="skill-level" style="width: 70%"></div></div>
-              </div>
-              <div class="skill-item">
-                <h4>UAS Operation</h4>
-                <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-              </div>
-            </div>
+          <div class="skill-item">
+            <h4>Python</h4>
+            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
           </div>
-        </div>
-      </section>
-
-      <section id="projects" class="fade-in">
-        <div class="section-header">
-          <h2>Projects</h2>
-          <div class="section-divider"></div>
-        </div>
-        <div class="projects-container">
-          <div class="project-card">
-            <div class="project-content">
-              <h3>Pothole Reporter</h3>
-              <p>Web app for submitting pothole locations with email alerts.</p>
-              <div class="project-tags">
-                <span>JavaScript</span>
-                <span>HTML/CSS</span>
-                <span>APIs</span>
-              </div>
-            </div>
+          <div class="skill-item">
+            <h4>Java</h4>
+            <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
           </div>
-          <div class="project-card">
-            <div class="project-content">
-              <h3>Pittsburgh Streets</h3>
-              <p>Street photography from around the city.</p>
-              <div class="project-tags">
-                <span>Photography</span>
-              </div>
-            </div>
+          <div class="skill-item">
+            <h4>HTML / CSS</h4>
+            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
           </div>
-          <div class="project-card">
-            <div class="project-content">
-              <h3>Robotics Project</h3>
-              <p>Programmed and wired up a small robot.</p>
-              <div class="project-tags">
-                <span>Python</span>
-                <span>Electronics</span>
-              </div>
-            </div>
+          <div class="skill-item">
+            <h4>Photography</h4>
+            <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
           </div>
-        </div>
-      </section>
-
-      <section id="contact" class="fade-in">
-        <div class="section-header">
-          <h2>Contact</h2>
-          <div class="section-divider"></div>
-        </div>
-        <div class="contact-container">
-          <div class="contact-info">
-            <div class="contact-method">
-              <span>Simmons.ellis725@gmail.com</span>
-            </div>
-            <div class="contact-method">
-              <span>(412) 863-9298</span>
-            </div>
-            <div class="contact-method">
-              <span>Pittsburgh, PA</span>
-            </div>
-            <div class="social-links">
-              <a href="https://github.com/esimmons1" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <div class="contact-form">
-            <form id="contactForm">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-              </div>
-              <button type="submit" class="btn primary-btn">Send</button>
-            </form>
+          <div class="skill-item">
+            <h4>3D Modeling</h4>
+            <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
           </div>
         </div>
       </section>
     </main>
-
-    <footer>
-      <div class="footer-content">
-        <div class="footer-logo">ES</div>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="programming.html">Programming</a>
-          <a href="photography.html">Photography</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Ellis Simmons</p>
-      </div>
-    </footer>
-
-    <script>
-      document.getElementById('navToggle').addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.toggle('active');
-      });
-
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-          document.querySelector('.nav-links').classList.remove('active');
-        });
-      });
-
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Message received.');
-        this.reset();
-      });
-
-      const observerOptions = { threshold: 0.1 };
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll('.fade-in').forEach(element => {
-        observer.observe(element);
-      });
-    </script>
   </body>
 </html>
