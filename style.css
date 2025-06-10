@@ -1,4 +1,4 @@
-/* === Root Variables === */
+    /* === Root Variables === */
 /* This section defines custom CSS properties (variables) for consistent styling throughout the website. */
 /* It includes color palettes (blue and gray), typography settings (font family, sizes, weights), */
 /* spacing units, layout properties (container width, border-radius), shadow effects, and transition durations. */
@@ -330,7 +330,7 @@ body {
 .map-container {
     width: 100%;
     max-width: 550px;
-    height: 650px;
+    height: 550px;
     background: rgba(74, 144, 226, 0.05);
     border-radius: var(--border-radius-lg);
     border: 1px solid rgba(74, 144, 226, 0.2);
@@ -350,10 +350,11 @@ body {
 /* Animation completion text */
 .animation-completion-text {
     position: absolute;
+    text-align: right;
     bottom: 30px;
     right: 30px;
     color: var(--primary-blue);
-    font-size: 1.7rem;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     font-weight: var(--font-weight-semibold);
     opacity: 0;
     transform: translateY(10px);
