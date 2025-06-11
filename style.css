@@ -273,6 +273,7 @@ body {
 /* Styles for a group of action buttons in the hero section, arranged with a gap and allowing wrapping. */
 .hero-actions {
     display: flex;
+    justify-content: center; /* Or flex-start, flex-end, etc., depending on desired alignment */
     gap: var(--spacing-md);
     flex-wrap: wrap;
 }
@@ -338,6 +339,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    top: -100px;
     overflow: hidden;
 }
 
