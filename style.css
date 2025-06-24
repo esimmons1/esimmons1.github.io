@@ -274,7 +274,7 @@ body {
 .hero-actions {
     display: flex;
     align-items: center;
-    max-width: 500px;
+    max-width: 60%;
     justify-content: center; /* Or flex-start, flex-end, etc., depending on desired alignment */
     gap: var(--spacing-md);
     flex-wrap: wrap;
@@ -459,17 +459,18 @@ body {
     color: var(--text-secondary);
     text-align: center;
     margin-bottom: var(--spacing-xl);
-    max-width: 700px;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* IMPROVED: Skills grid optimized for better space utilization */
 .skills-grid {
-    display: grid;  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-lg);
     margin-top: var(--spacing-xl);
-    max-width: 1000px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
@@ -482,6 +483,7 @@ body {
     border-radius: var(--border-radius-lg);
     border: 1px solid rgba(74, 144, 226, 0.1);
     transition: var(--transition-normal);
+    width: 100%;
 }
 
 /* Hover effects for skill categories, changing border color, applying a slight upward translation, and adding a shadow. */
