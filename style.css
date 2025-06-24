@@ -273,10 +273,13 @@ body {
 /* Styles for a group of action buttons in the hero section, arranged with a gap and allowing wrapping. */
 .hero-actions {
     display: flex;
+    align-items: center;
+    max-width: 800px;
     justify-content: center; /* Or flex-start, flex-end, etc., depending on desired alignment */
     gap: var(--spacing-md);
     flex-wrap: wrap;
     margin-top: var(--spacing-xl);
+    margin: var(--spacing-xl) auto 0 auto
 }
 
 /* Base styles for all buttons, including display, alignment, padding, border-radius, text decoration, font weight, and transitions. */
@@ -298,13 +301,16 @@ body {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
     color: white;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Hover effects for the primary button, including a slight upward translation and an increased shadow. */
 .btn-primary:hover {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: none;
 }
 
 /* Styles for the secondary button, with a transparent background, blue text, and a blue border. */
@@ -460,8 +466,7 @@ body {
 
 /* IMPROVED: Skills grid optimized for better space utilization */
 .skills-grid {
-    display: grid;
-
+    display: grid;  
     gap: var(--spacing-lg);
     margin-top: var(--spacing-xl);
     max-width: 1000px;
@@ -566,7 +571,7 @@ body {
 /* IMPROVED: Gallery grid optimized for better space utilization and responsive layout */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: 10px;
     gap: 15px;
     margin-top: var(--spacing-xl);
