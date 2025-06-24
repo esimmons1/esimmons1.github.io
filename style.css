@@ -274,7 +274,7 @@ body {
 .hero-actions {
     display: flex;
     align-items: center;
-    max-width: 800px;
+    max-width: 500px;
     justify-content: center; /* Or flex-start, flex-end, etc., depending on desired alignment */
     gap: var(--spacing-md);
     flex-wrap: wrap;
